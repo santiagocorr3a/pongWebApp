@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div>
+        <h1> Log In</h1>
+    </div>
+    <div class="container" id="signup">
+        <form action="/login" method="post">
+            <div>
+                <input autocomplete="off" autofocus class="form" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="password-container">
+                <input class="form" name="password" placeholder="Password" type="password" id="password">
+                <span class="material-symbols-outlined navbar_item" id="visibility_icon">visibility_off</span>
+            </div>
+            <button class="button" type="submit">Log In</button>
+        </form>
+
+    </div>
+    <h3 style="font-size: 12px">Don't have an account yet?</h3>
+        <a href="/signup"><button class="button" type="submit">Sign up</button></a>
+</div>
+
+{% endblock %}

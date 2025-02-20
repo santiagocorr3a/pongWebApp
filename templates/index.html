@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<div class="container" id="default">
+    <div class="container main">
+        <div class="card" style="--i: -1"><img src = "/static/PT4hearts.png"></div>
+        <div class="card" style="--i: 0"><img src = "/static/PT8diamonds.png"></div>
+        <div class="card" style="--i: 1"><img src = "/static/PT10cloves.png"></div>
+        <div class="card" style="--i: 2"><img src = "/static/PTQspades.png"></div>
+    </div>
+    <div class="container side">
+        <div class="container">
+            <h1 class="montserrat index_text">THE WORLD'S</h1>
+            <img src="/static/best_drop.gif" alt="Animated GIF" class="animated-gif">
+            <h1 class="montserrat index_text">CARD GAME</h1>
+        </div>
+        {% if session["user_id"] %}
+        <h3>(@{{name}}, 2024)</h3>
+        {% else %}
+        <h3>(My uncle, 2024)</h3>
+        {% endif %}
+        <div class="container button_group">
+            <a href="/play"><button class="button" id="blue_button">Start a game</button></a>
+            <a href="/help"><button class="button" id="yellow_button">How to play</button></a>
+            <a href="/login"><button class="button" id="green_button">Log in</button></a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sign up
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div>
+        <h1>Sign up</h1>
+    </div>
+    <div class="container" id="signup">
+        <form action="/signup" method="post">
+            <div>
+                <input autocomplete="off" autofocus class="form" name="first_name" placeholder="First name" type="text" id="first_name">
+            </div>
+            <div>
+                <input autocomplete="off" autofocus class="form" name="last_name" placeholder="Last name" type="text" id="last_name">
+            </div>
+            <div>
+                <input autocomplete="off" autofocus class="form" name="signup_username" placeholder="Username" type="text" id="username">
+                <p class="montserrat" id="username_warning"></p>
+            </div>
+            <div class="password-container">
+                <input class="form" name="signup_password" placeholder="Password" type="password" id="password">
+                <span class="material-symbols-outlined navbar_item" id="visibility_icon">visibility_off</span>
+            </div>
+            <button class="button" type="submit" id="signup_button" disabled>Sign up</button>
+        </form>
+
+        <p class="montserrat" id="password_warning"></p>
+
+    </div>
+    <h3 style="font-size: 12px">Have an account?</h3>
+        <a href="/login"><button class="button" type="submit">Log in</button></a>
+</div>
+
+{% endblock %}

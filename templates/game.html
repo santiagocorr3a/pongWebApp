@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Game
+{% endblock %}
+
+{% block main %}
+<!--GAME CODE-->
+<div class="container" style="margin-bottom: 20px;">
+    <h3>Game code: {{ game_code }}</h3>
+</div>
+<div class="container" id="default">
+    <div class="container montserrat">
+        <table id="players_table">
+            <tr>
+                <th></th>
+                <th style="padding: 20px;">Player</th>
+                <th style="padding: 20px;">Score</th>
+                <th style="padding: 20px;">Add points</th>
+            </tr>
+            {% for player in players %}
+            <!--TABLE ROWS START-->
+                <tr>
+                  <td>
+                    <!--EDIT NAME (PENCIL)-->
+                    <button class="button" style="color: var(--red);; border: none; padding: 0px; margin: 0px;" onclick="editName({{ player.id }}, '{{ player.player_name }}')" id="edit_icon-{{ player.id }}">
+                      <span class="material-symbols-outlined" style="font-weight: 600; font-size: 20px">edit</span>
+                    </button>
+                  </td>
+                  <!--PLAYER NAME-->
+                    <td id="player_name-{{ player.id }}">{{ player.player_name }}</td>
+                    <!--PLAYER SCORE-->
+                    <td id="score-{{ player.id }}">
+                      <button type="button" class="filled_button">
+                        <span style="font-weight: 600; font-size: 30px">{{ player.points }}</span>
+                      </button>
+                    </td>
+                    <!--ADD POINTS-->
+                    <td>
+                      <div class="container" style="flex-direction: row" >
+                      <form>
+                        <input class="form points_add" name="add_points" placeholder="±Points" type="text" id="add-points-{{ player.id }}">
+                      </form>
+                          <button type="button" class="filled_button" onclick="addPoints({{ player.id }})">
+                            <span class="material-symbols-outlined" style="font-weight: 600; font-size: 30px">add</span>
+                          </button>
+                        </div>
+                      </td>
+                </tr>
+                </tr>
+            {% endfor %}
+            <!--TEST FIELD STARTS-->
+            <tr style="display:none">
+              <td>
+                <button class="button" style="color: black; border: none; padding: 0px; margin 0px;">
+                  <span class="material-symbols-outlined" style="font-weight: 600; font-size: 20px">edit</span>
+                </button>
+              </td>
+              <td>
+                <div class="container" style="flex-direction: row">
+                  <form>
+                    <input class="form player_add" name="new_name" placeholder="New name" type="text" >
+                  </form>
+                  <button class="button" style="color: black; border: none; padding: 0px; margin 0px;">
+                    <span class="material-symbols-outlined" style="font-weight: 900; font-size: 24px" >check</span>
+                  </button>
+                </div>
+              </td>
+              <td>
+                <button type="button" class="filled_button">
+                  <span style="font-weight: 600; font-size: 30px">55</span>
+                </button>
+              </td>
+              <td>
+                <div class="container" style="flex-direction: row" >
+                <form>
+                  <input class="form points_add" name="add_points" placeholder="Points" type="number" id="password">
+                </form>
+                    <button type="button" class="filled_button">
+                      <span class="material-symbols-outlined" style="font-weight: 600; font-size: 30px">add</span>
+                    </button>
+                  </div>
+                </td>
+            </tr>
+        </table>
+        <!--TEST FIELD ENDS-->
+        <!--ADD PLAYER AREA-->
+        <div class="container_2" id="add_player_box" style="position: relative; justify-content: center; align-items: center;">
+          <form>
+            <div class="container_2">
+              <input class="form player_add" placeholder="Player name" id="player_add_name">
+              <input class="form player_add" placeholder="Player Score" id="player_add_score">
+            </div>
+          </form>
+          <button type="button" class="filled_button" onclick="addPlayer('{{ game_code }}')">
+            <div class="container" style="margin: 0px 10px; flex-direction: row;">
+              <span class="material-symbols-outlined" style="font-weight: 600; font-size: 30px">person_add</span>
+              <p class="montserrat" style="color: var(--paper);; padding: 0px 10px;">Add player</p>
+            </div>
+          </button>
+        </div>
+    </div>
+    <!--PODIUM-->
+    <div class="container_2 podium" style="display:; align-items: flex-end;">
+        <div class="podium__item">
+          <p class="podium__city podium_names" id="podium_second"></p>
+          <div class=" container podium__rank second">
+            <span class="material-symbols-outlined" style="font-size: 80px; font-weight: 600">trophy</span>
+            <img src="{{ url_for('static', filename='pong_logo_transp.png') }}" class="logo" id ="logo" style=" height:32px;">
+          </div>
+        </div>
+        <div class="podium__item">
+          <p class="podium__city podium_names" id="podium_first"></p>
+          <div class="container podium__rank first">
+            <span class="material-symbols-outlined" style="font-size: 100px; font-weight: 800">rewarded_ads</span>
+            <img src="{{ url_for('static', filename='pong_logo_transp.png') }}"" class="logo" id ="logo" style=" height:32px;">
+          </svg>
+          </div>
+      </div>
+        <div class="podium__item">
+          <p class="podium__city podium_names" id="podium_third"></p>
+          <div class=" container podium__rank third">
+            <span class="material-symbols-outlined" style="font-size: 60px; font-weight: 400">workspace_premium</span>
+            <img src="{{ url_for('static', filename='pong_logo_transp.png') }}" style=" height:32px;">
+          </div>
+        </div>
+    </div>
+</div>
+<div class="container pindown">
+  <div class="container circle">
+    <span class="material-symbols-outlined navbar_item">Palette</span>
+  </div>
+</div>
+{% endblock %}
+

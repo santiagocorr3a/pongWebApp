@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    play
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="container">
+            <h1>Play!</h1>
+        </div>
+        <div class="container montserrat play_forms" id="default">
+            <div class="container" style="width:30vw; height:30vh; flex-direction: column">
+                 <h3 style="width:200px;">Host a game</h3>
+                <button class="button" id="start_game">Start game</button>
+             </div>
+             <div class="container" style="width:30vw; height:30vh">
+              <h3 style="width:200px;">Join a lobby</h3>
+               <form action="/join_game" method="POST">
+                  <input autocomplete="off" class="form" name="game_code" placeholder="Game code">
+                  <button class="button" type="submit">Join a game</button>
+              </form>
+          </div>
+      </div>
+    </div>
+
+
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup" id="popup">
+            <span class="close" id="closePopup">&times;</span>
+            <div class="popup-content">
+                <p class="montserrat">How many people will be playing?</p>
+            <form action="/game" method="post">
+                <input type="number" placeholder="Number of players" id="player_count" pattern="[0-9]*" name="player_count" class="form" style="border: 2px solid #4caf50">
+                <button class="button">Start game</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    player_view
+{% endblock %}
+
+{% block main %}
+<!--GAME CODE-->
+<div class="container">
+    <h3>Game code: {{ game_code }}</h3>
+</div>
+<div class="container" id="default">
+    <div class="container montserrat">
+        <table id="players_table">
+            <tr>
+                <th>Player</th>
+                <th>Score</th>
+            </tr>
+            {% for player in players %}
+            <!--TABLE ROWS START-->
+                <tr>
+                  <!--PLAYER NAME-->
+                    <td id="player_name-{{ player.id }}">{{ player.player_name }}</td>
+                    <!--PLAYER SCORE-->
+                    <td id="score-{{ player.id }}">
+                      <button type="button" class="filled_button">
+                        <span style="font-weight: 600; font-size: 30px">{{ player.points }}</span>
+                      </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <!--PODIUM-->
+    <div class="container_2 podium" style="display:; align-items: flex-end;">
+      <div class="podium__item">
+        <p class="podium__city podium_names" id="podium_second"></p>
+        <div class=" container podium__rank second">
+          <span class="material-symbols-outlined" style="font-size: 80px; font-weight: 600">trophy</span>
+          <img src="{{ url_for('static', filename='pong_logo_transp.png') }}" class="logo" id ="logo" style=" height:32px;">
+        </div>
+      </div>
+      <div class="podium__item">
+        <p class="podium__city podium_names" id="podium_first"></p>
+        <div class="container podium__rank first">
+          <span class="material-symbols-outlined" style="font-size: 100px; font-weight: 800">rewarded_ads</span>
+          <img src="{{ url_for('static', filename='pong_logo_transp.png') }}"" class="logo" id ="logo" style=" height:32px;">
+        </svg>
+        </div>
+    </div>
+      <div class="podium__item">
+        <p class="podium__city podium_names" id="podium_third"></p>
+        <div class=" container podium__rank third">
+          <span class="material-symbols-outlined" style="font-size: 60px; font-weight: 400">workspace_premium</span>
+          <img src="{{ url_for('static', filename='pong_logo_transp.png') }}" style=" height:32px;">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container pindown">
+<div class="container circle">
+  <span class="material-symbols-outlined navbar_item">Palette</span>
+</div>
+</div>
+{% endblock %}

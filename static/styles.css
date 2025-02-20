@@ -1,0 +1,529 @@
+:root {
+    --blue: #17bebb;
+    --white: #ffffff;
+    --green: #8dd04e;
+    --yellow: #ffc914;
+    --red: #ff5555;
+    --background: #121212;
+    --paper: #dbe1d7;
+  }
+.playfair{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.montserrat {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 16vh;
+    margin-bottom: 30px;
+    background-color: var(--background);
+    border-bottom: solid 9px var(--paper);
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+.logo {
+    flex-shrink: 0;
+
+}
+.navbar {
+    display: flex;
+}
+.navbar_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navbar_item {
+    margin: 15px;
+    color: var(--paper);
+    font-size: 42px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+.navbar_text {
+    color: var(--paper);
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: -10px;
+}
+.navbar_item:hover {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 500,
+    'GRAD' 200,
+    'opsz' 40
+}
+#playing_cards_icon:hover {
+    color: var(--red);
+}
+#help_icon:hover {
+    color: var(--blue);
+}
+#groups_icon:hover {
+    color: var(--yellow);
+}
+#log_out:hover {
+    color: var(--yellow);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+}
+p {
+    font-family: "Montserrat", serif;
+    color: var(--white);
+    font-size: 12px;
+}
+.index_text {
+    font-family: "Montserrat", serif;
+    color: var(--paper);
+    font-size: 45px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    position: relative;
+    width: 50%;
+    height: 500px;
+}
+.container .card {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform-origin: 50% 100%;
+}
+.container .card img {
+    width: 100%;
+    height: 100%;
+}
+.container:hover .card{
+    transform: rotate(calc(var(--i) * 10deg));
+}
+.container .card:hover{
+    transition: 0.5s;
+    translate: calc(var(--i)*30px)-50px;
+}
+h1 {
+    font-family: "Montserrat", serif;
+    color: var(--paper);
+    font-size: 42px;
+}
+h3 {
+    font-family: "Montserrat", serif;
+    color: var(--paper);
+    font-size: 30px;
+}
+table, tr{
+    border-bottom: solid 6px var(--paper);
+    border-left: solid 1px var(--paper);
+    border-right: solid 1px var(--paper);
+    border-top: solid 1px var(--paper);
+    border-radius: 14px;
+    text-align: center;
+    padding: 5px 10px;
+    color: var(--paper);
+}
+.pattern {
+    background-color: var(--background);
+    border-radius: 10px;
+    height:100px;
+}
+.side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    text-align: center;
+    max-width: 500px;
+}
+.button {
+    text-align: center;
+    text-decoration: bold;
+    font-size: 18px;
+    font-family: "Montserrat", serif;
+    font-weight: 800;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--background);
+    border-bottom: solid 6px var(--paper);
+    border-left: solid 1px var(--paper);
+    border-right: solid 1px var(--paper);
+    border-top: solid 1px var(--paper);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    color: var(--paper);
+    transition-duration: 0.3s;
+}
+.button:hover {
+    border: solid 1px var(--paper);
+}
+.filled_button {
+    text-align: center;
+    text-decoration: bold;
+    font-size: 18px;
+    font-family: "Montserrat", serif;
+    font-weight: 800;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: solid 6px var(--red);
+    border-left: solid 1px var(--red);
+    border-right: solid 1px var(--red);
+    border-top: solid 1px var(--red);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    transition-duration: 0.3s;
+    color: var(--red);
+    background-color: var(--background);
+}
+.filled_button:hover {
+    border: solid 1px var(--red);
+}
+#blue_button:hover {
+    border: 0.5px solid var(--paper);
+    background-color: var(--red);
+    color: var(--paper);
+}
+#yellow_button:hover {
+    border: 0.5px solid var(--paper);
+    background-color: var(--blue);
+    color: var(--paper);
+}
+#green_button:hover {
+    border: 0.5px solid var(--paper);
+    background-color: var(--yellow);
+    color: var(--paper);
+}
+.button_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    font-size: 12px;
+    font-family: "Montserrat", serif;
+    font-weight: 800;
+    border: 0.5px solid var(--paper);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--background);
+    border: 2px solid #ff5555;
+    color: var(--paper);
+}
+.password-container {
+    position: relative;
+}
+.password-container input {
+    padding-right: 10px;
+}
+.circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #ff5555;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .circle2 {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #ff5555;
+  }
+.circle_text {
+    font-size: 75px;
+    color: var(--background);
+}
+#add_player_box {
+    align-self: center;
+    padding: 10px 20px;
+    flex-direction: column;
+}
+  .container_2 {
+    display: flex;
+    align-items: flex-start;
+  }
+  .podium__item {
+    width: 30vw;
+  }
+
+  .podium__rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #fff;
+  }
+
+  .podium__city {
+    text-align: center;
+    padding: 0 .5rem;
+  }
+
+  .podium__number {
+    width: 27px;
+    height: 75px;
+  }
+
+  .podium .first {
+    min-height: 300px;
+    background: var(--red);
+    border-bottom: solid 6px var(--paper);
+    border-left: solid 1px var(--paper);
+    border-right: solid 1px var(--paper);
+    border-top: solid 1px var(--paper);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    transition-duration: 0.3s;
+  }
+
+  .podium .second {
+    min-height: 200px;
+    background: var(--yellow);
+    border-bottom: solid 6px var(--paper);
+    border-left: solid 1px var(--paper);
+    border-right: solid 1px var(--paper);
+    border-top: solid 1px var(--paper);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    transition-duration: 0.3s;
+  }
+
+  .podium .third {
+    min-height: 100px;
+    background: var(--green);
+    border-bottom: solid 6px var(--paper);
+    border-left: solid 1px var(--paper);
+    border-right: solid 1px var(--paper);
+    border-top: solid 1px var(--paper);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    transition-duration: 0.3s;
+  }
+.podium_logo {
+    height: 32px;
+}
+#visibility_icon{
+    position: absolute;
+    right: 6px;
+    top: 25%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+#visibility_icon {
+    font-size: 28px
+}
+#username_warning {
+    font-size: 12px;
+    display:none;
+}
+#password_warning {
+    font-size: 12px;
+    display:none;
+}
+#signup_button {
+    border: 0.5px solid black;
+    color: black;
+}
+#default {
+    justify-content: space-around;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.popup {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.popup-content {
+    text-align: center;
+}
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+.popup #emailInput {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.popup button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+.player_add {
+    border-bottom: solid 6px var(--paper);
+    border-left: solid 1px var(--paper);
+    border-right: solid 1px var(--paper);
+    border-top: solid 1px var(--paper);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    color: var(--paper);
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    transition-duration: 0.3s;
+}
+.player_add:hover {
+    border: solid 1px var(--paper);
+}
+.points_add {
+    width: 40px;
+}
+.pindown {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.podium_names {
+    font-weight: 700;
+    font-size: 20px;
+}
+.instructions_text {
+    margin: 20px;
+    width: 60vw;
+}
+.instructions_text_combinations {
+    margin: 20px;
+}
+.small_text {
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: -15px;
+    margin-left: 20px;
+    width: 300px;
+}
+.instructions {
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.animated-gif {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: -80px auto;
+    z-index: -1;
+}
+.instructions_cards {
+    height: 150px;
+    width: auto;
+}
+.card_examples {
+    overflow: auto;
+    max-width: 90vw;
+}
+.instructions_cards {
+    height: 150px;
+    justify-content: center
+}
+.right_text {
+    position
+}
+.for_cards {
+    justify-content: flex-end;
+    width: 60vw;
+
+}
+.play_forms {
+    justify-content: center;
+    width: 60vw;
+}
+@media (min-width: 770px) {
+    #default {
+        flex-direction: row;
+    }
+    .podium__item {
+        width: 250px;
+      }
+    .points_add {
+        width: 120px;
+    }
+    #add_player_box {
+        flex-direction: row;
+        align-self: flex-start;
+    }
+    .instructions_text {
+        font-size: 20px;
+    }
+    .instructions_container {
+        width: 60vw;
+    }
+    .play_forms {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 1340px) {
+    .main {
+        margin-left: -20vh;
+    }
+    .container .card {
+        width: 300px;
+        margin-bottom: 0px;
+        margin-left: 100px;
+    }
+    .card_examples {
+        overflow: auto;
+        max-width: 600px;
+    }
+}

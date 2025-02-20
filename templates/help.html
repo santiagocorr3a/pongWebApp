@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Help
+{% endblock %}
+
+{% block main %}
+<div class="container" id="default" style="justify-content: center; flex-direction: column;">
+  <div class="container instructions_container">
+    <h1>How to Play?</h1>
+    <div class="container_2 instructions" style="align-items: flex-start">
+        <div class="container circle2">
+          <span class="material-symbols-outlined navbar_item circle_text">counter_1</span>
+        </div>
+        <p class="instructions_text">Get a deck of playing cards. <strong>Remove the jokers</strong>. If there are more than 5 players, it is recommended to use 2 decks of cards.</p>
+    </div>
+    <div class="container_2 instructions">
+      <p class="instructions_text">Shuffle the cards and <strong>deal 5 cards to each player</strong>. Make sure players keep their cards hidden from others.</p>
+        <div class="container circle2">
+          <span class="material-symbols-outlined navbar_item circle_text">counter_2</span>
+        </div>
+    </div>
+    <div class="container_2 instructions">
+        <div class="container circle2">
+          <span class="material-symbols-outlined navbar_item circle_text">counter_3</span>
+        </div>
+        <p class="instructions_text">Place the remaining cards in the center where everyone can reach. This will be the draw pile, from which players will draw one card per round.</p>
+    </div>
+  </div>
+  <h1>Game Flow</h1>
+  <p class="instructions_text">
+    The game proceeds clockwise (unless stated otherwise). The dealer starts the round by drawing an extra card and discarding one of their 6 cards to begin the round.
+    <br><br>
+    If a player has a "PONG" (two cards of the same number or value), and the discarded card matches that number or value, they must shout "PONG!" and place their pair on the discard pile. They then discard another card from their hand to continue the round.
+    <br><br>
+    If no one shouts "PONG," the next player (to the right of the previous player) draws one card from the draw pile and discards one. The round continues like this until someone shouts "PONG!" or someone wins by forming a valid combination.
+  </p>
+
+  <h1>PONG Mechanic</h1>
+  <p class="instructions_text">
+    To shout "PONG!", you must already have two cards of the same number or value in your hand. When another player discards a card matching your pair, you shout "PONG!" and place the pair on the discard pile. Then, discard another card to continue the game.
+  </p>
+
+  <h1>Stop Rule</h1>
+  <p class="instructions_text">
+    You can stop the game when it is your turn to draw from the pile, but <strong>before drawing a card</strong>. Stopping ends the round for all players, leaving them with the points in their hands. This strategy can leave opponents with high points while you minimize your own. However, if someone else has the same or fewer points than you, you receive a 50-point penalty in addition to the points in your hand.
+  </p>
+
+  <h1>Scoring</h1>
+  <p class="instructions_text">
+    At the end of each round, players count the points in their hands and report them to the scorekeeper. Aces are worth 1 point. Combinations have specific rules that affect scoring (see below).
+  </p>
+
+  <h1>Learn the Card Combinations!</h1>
+  <div class="container card_examples_container">
+
+    <div class="container for_cards" id="default">
+      <div class="card_examples">
+        <img src="/static/combinations/presidente.png" class="instructions_cards">
+      </div>
+      <div class="container">
+        <h3 class="instructions_text_combinations">PONG</h3>
+        <p class="small_text">What it is: Two cards of the same number or value, even if from different suits.
+          Effect: Allows you to respond to a discarded card and continue the round.</p>
+      </div>
+    </div>
+
+    <div class="container for_cards" id="default">
+      <div class="card_examples">
+        <img src="/static/combinations/triple.png" class="instructions_cards">
+      </div>
+      <div class="container">
+        <h3 class="instructions_text_combinations">TRIPLE</h3>
+        <p class="small_text">What it is: Three cards of the same number or value.
+          Effect: Combined, these are worth 0 points.</p>
+      </div>
+    </div>
+
+    <div class="container for_cards" id="default">
+      <div class="card_examples">
+        <img src="/static/combinations/toitoi.png" class="instructions_cards">
+      </div>
+      <div class="container for_cards">
+        <h3 class="instructions_text_combinations">TOI TOI</h3>
+        <p class="small_text">What it is: Three pairs of cards.
+          Effect: If you get this, the round ends immediately, and your score for the round is 0 points.</p>
+      </div>
+    </div>
+
+    <div class="container for_cards" id="default">
+      <div class="card_examples">
+        <img src="/static/combinations/stop.png" class="instructions_cards">
+      </div>
+      <div class="container">
+        <h3 class="instructions_text_combinations">STOP</h3>
+        <p class="small_text">What it is: Ending the game when your total hand value is 5 points or less. Stopping is a risky move, but powerful if used correctly.
+          Effect: Ends the round, forces other players to count their hand values.
+          Tip: Combine this strategy with low-point combinations like a TRIPLE.</p>
+      </div>
+    </div>
+
+    <div class="container for_cards" id="default">
+      <div class="card_examples">
+        <img src="/static/combinations/stop_triple.png" class="instructions_cards">
+      </div>
+      <div class="container">
+        <h3 class="instructions_text_combinations">STOP + TRIPLE</h3>
+        <p class="small_text">You can combine the STOP rule with other combinations. For example, if you have a TRIPLE (0 points) and less than 5 points in your other cards, you can stop the game. This is especially effective early in the round or when other players have many cards.</p>
+      </div>
+    </div>
+
+    <div class="container for_cards" id="default">
+      <div class="card_examples">
+        <img src="/static/combinations/presidente.png" class="instructions_cards">
+      </div>
+      <div class="container">
+        <h3 class="instructions_text_combinations">PRESIDENTE</h3>
+        <p class="small_text">What it is: Four cards of the same number or value, plus a pair of another number or value.
+          Effect: Instantly ends the game.
+          Special Rule: If the total points in your hand equal less than 10 (e.g., 4 Aces and 2 Twos), you score a -300 PRESIDENTE, which significantly boosts your chances of winning.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
