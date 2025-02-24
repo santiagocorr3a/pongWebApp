@@ -3,7 +3,7 @@
 #### Video Demo: (https://youtu.be/Y9SwkZUaGhM)
 
 #### Description:
-Pong is a web app I created to enhance the experience of playing the traditional Korean card game Pong, which a friend introduced to me. I often found it challenging to keep track of the scores while playing, so I built this app to make the game more enjoyable and organized.
+Pong is a web app designed to enhance the traditional Korean card game Pong by simplifying score tracking. After finding it difficult to manage scores during gameplay, I decided to build this app to create a more enjoyable, organized experience for players.
 
 ## Features
 
